@@ -28,6 +28,7 @@ public class SecurityConfiguration {
         // all other paths require a logged in user
         chainDefinition.addPathDefinition("/", "anon");
         chainDefinition.addPathDefinition("/auth/index", "anon");
+        chainDefinition.addPathDefinition("/auth/login", "anon");
 
         return chainDefinition;
     }
