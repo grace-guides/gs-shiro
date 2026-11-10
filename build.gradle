@@ -61,6 +61,7 @@ dependencies {
     implementation "org.graceframework:grace-plugin-gsp"
     implementation "org.graceframework.plugins:database-migration"
     implementation "org.graceframework.plugins:hibernate5"
+    implementation 'org.apache.shiro:shiro-spring-boot-web-starter:2.2.1'
     profile "org.graceframework.profiles:web"
     runtimeOnly "org.graceframework.plugins:asset-pipeline-plugin:5.2.7"
     runtimeOnly "com.h2database:h2"
