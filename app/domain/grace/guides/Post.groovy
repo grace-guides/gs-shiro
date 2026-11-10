@@ -4,6 +4,6 @@ class Post {
     String title
 
     static constraints = {
-        title(nullable: false, maxSize: 255)
+        title(nullable: false, blank: false, maxSize: 255)
     }
 }
