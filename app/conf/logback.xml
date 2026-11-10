@@ -15,5 +15,7 @@
         <appender-ref ref="STDOUT" />
     </root>
     <logger name="org.hibernate.orm.deprecation" level="error" />
+    <logger name="org.hibernate.SQL" level="debug" />
+    <logger name="org.apache.shiro" level="debug" />
     <logger name="grace.guides.Application" level="debug" />
 </configuration>
