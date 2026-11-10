@@ -4,12 +4,12 @@ This guide walks you through the process of creating a simple web application wi
 
 ## Grace Version
 
-- Grace Framework **2022.2.9**
+- Grace Framework **2023.0.3**
 
 
 ```gradle
 dependencies {
-    implementation 'org.apache.shiro:shiro-spring-boot-web-starter:2.2.1'
+    implementation 'org.apache.shiro:shiro-spring-boot-web-starter:3.0.1'
 }
 ```
 
