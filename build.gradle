@@ -10,6 +10,9 @@ group = "grace.guides"
 
 repositories {
     mavenCentral()
+    maven {
+        url = "https://repository.apache.org/content/repositories/orgapacheshiro-1097/"
+    }
 }
 
 configurations {
@@ -34,7 +37,7 @@ dependencies {
     implementation "org.graceframework:grace-plugin-scaffolding"
     implementation "org.graceframework:grace-plugin-services"
     implementation "org.graceframework:grace-plugin-taglibs"
-    implementation 'org.apache.shiro:shiro-spring-boot-web-starter:3.0.1'
+    implementation 'org.apache.shiro:shiro-spring-boot-web-starter:3.0.2'
     profile "org.graceframework.profiles:web"
     runtimeOnly "com.h2database:h2"
     runtimeOnly "jakarta.servlet.jsp:jakarta.servlet.jsp-api"
