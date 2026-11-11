@@ -2,24 +2,24 @@ package grace.guides
 
 import grails.gorm.transactions.Transactional
 
-class BootStrap {
+class Bootstrap {
 
     def init = { servletContext ->
-        // environments {
-        //     development {
-        //         loadSampleData()
-        //     }
-        // }
+        environments {
+            development {
+                loadSampleData()
+            }
+        }
     }
 
     def destroy = {
     }
 
-    // @Transactional
-    // protected void loadSampleData() {
-    //     (1..9).each {
-    //         new Post(title: "Grace 2022.0.${it} released").save()
-    //     }
-    // }
+    @Transactional
+    protected void loadSampleData() {
+        (1..9).each {
+            new Post(title: "Grace 2022.0.${it} released").save()
+        }
+    }
 
 }
