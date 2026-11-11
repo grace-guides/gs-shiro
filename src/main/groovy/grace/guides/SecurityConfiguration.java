@@ -10,19 +10,21 @@ import org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration;
 import org.apache.shiro.spring.config.web.autoconfigure.ShiroWebAutoConfiguration;
 import org.apache.shiro.spring.web.config.DefaultShiroFilterChainDefinition;
 import org.apache.shiro.spring.web.config.ShiroFilterChainDefinition;
-import org.springframework.boot.autoconfigure.AutoConfiguration;
+import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
-@AutoConfiguration(before = { ShiroBeanAutoConfiguration.class, ShiroWebAutoConfiguration.class })
+@Configuration(proxyBeanMethods = false)
+@AutoConfigureBefore({ ShiroBeanAutoConfiguration.class, ShiroWebAutoConfiguration.class })
 public class SecurityConfiguration {
 
     @Bean(name = "shiroEventBus")
-    public static EventBus eventBus() {
+    public EventBus eventBus() {
         return new DefaultEventBus();
     }
 
     @Bean(name = "shiroSessionFactory")
-    protected SessionFactory sessionFactory() {
+    public SessionFactory sessionFactory() {
         return new SimpleSessionFactory();
     }
 
