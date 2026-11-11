@@ -1,14 +1,30 @@
 package grace.guides;
 
+import org.apache.shiro.event.EventBus;
+import org.apache.shiro.event.support.DefaultEventBus;
 import org.apache.shiro.realm.Realm;
 import org.apache.shiro.realm.text.PropertiesRealm;
+import org.apache.shiro.session.mgt.SessionFactory;
+import org.apache.shiro.session.mgt.SimpleSessionFactory;
+import org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration;
+import org.apache.shiro.spring.config.web.autoconfigure.ShiroWebAutoConfiguration;
 import org.apache.shiro.spring.web.config.DefaultShiroFilterChainDefinition;
 import org.apache.shiro.spring.web.config.ShiroFilterChainDefinition;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
-@Configuration
+@AutoConfiguration(before = { ShiroBeanAutoConfiguration.class, ShiroWebAutoConfiguration.class })
 public class SecurityConfiguration {
+
+    @Bean(name = "shiroEventBus")
+    public static EventBus eventBus() {
+        return new DefaultEventBus();
+    }
+
+    @Bean(name = "shiroSessionFactory")
+    protected SessionFactory sessionFactory() {
+        return new SimpleSessionFactory();
+    }
 
     @Bean
     public Realm realm() {
