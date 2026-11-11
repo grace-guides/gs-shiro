@@ -29,6 +29,7 @@ public class SecurityConfiguration {
         chainDefinition.addPathDefinition("/", "anon");
         chainDefinition.addPathDefinition("/auth/index", "anon");
         chainDefinition.addPathDefinition("/auth/login", "anon");
+        chainDefinition.addPathDefinition("/auth/logout", "authc");
 
         return chainDefinition;
     }
