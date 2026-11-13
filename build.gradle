@@ -10,9 +10,6 @@ group = "grace.guides"
 
 repositories {
     mavenCentral()
-    maven {
-        url = "https://repository.apache.org/content/repositories/orgapacheshiro-1097/"
-    }
 }
 
 configurations {
@@ -42,7 +39,7 @@ dependencies {
     runtimeOnly "com.h2database:h2"
     runtimeOnly "jakarta.servlet.jsp:jakarta.servlet.jsp-api"
     runtimeOnly "jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api"
-    runtimeOnly "org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1"
+    runtimeOnly "org.glassfish.web:jakarta.servlet.jsp.jstl"
     runtimeOnly "org.graceframework.plugins:asset-pipeline-plugin"
     testImplementation "org.graceframework:grace-boot-test"
 }
