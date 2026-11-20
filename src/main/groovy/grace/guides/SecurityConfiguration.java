@@ -45,8 +45,12 @@ public class SecurityConfiguration {
 
         // all other paths require a logged in user
         chainDefinition.addPathDefinition("/", "anon");
+        chainDefinition.addPathDefinition("/500", "anon");
+        chainDefinition.addPathDefinition("/error", "anon");
+        chainDefinition.addPathDefinition("/notFound", "anon");
         chainDefinition.addPathDefinition("/auth/index", "anon");
         chainDefinition.addPathDefinition("/auth/login", "anon");
+        chainDefinition.addPathDefinition("/actuator/**", "anon");
         chainDefinition.addPathDefinition("/auth/logout", "authc");
 
         return chainDefinition;
